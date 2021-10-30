@@ -26,7 +26,7 @@ module.exports = {
       secondary: "#262626",
       tertiary: "#0016D9",
       white: "#ffffff",
-      black,
+      black: "#000000",
     },
     fontFamily: {
       serif: ["poppins"],
