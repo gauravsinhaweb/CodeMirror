@@ -1,7 +1,7 @@
-import React, {useState, useEffect, useRef } from "react";
-import "./Input.css";
+import React, { useEffect, useRef } from "react";
 import { AiFillCaretLeft } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import "./Input.css";
 function OutputCode(props) {
   const output = useRef();
   useEffect(() => {
@@ -39,11 +39,15 @@ function OutputCode(props) {
           <h4 style={{ fontWeight: "600", fontSize: "21px" }}>Output code </h4>
         </div>
 
-        <textarea ref={output} id="input" className="texta">
+        <textarea
+          ref={output}
+          id="input"
+          className="texta select-none text-xl p-8 font-medium rounded-xl outline-none"
+        >
           {" "}
         </textarea>
       </div>
-      <div className="btncontainer">
+      <div className="btncontainer mt-4">
         <button className="btnc" onClick={downloadTxtFile}>
           {/* {`${load ? "Loading." : "< / > Convert"} `} */}
           {/* {"< / > Convert"} */}

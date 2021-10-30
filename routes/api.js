@@ -22,6 +22,7 @@ const upload = multer({ storage });
 
 router.post("/", upload.single('Image'), async (req, res) => {
   const file = req.file;
+  console.log('file');
   try {
     const client = new vision.ImageAnnotatorClient({
       keyFilename: "./APIKey.json",

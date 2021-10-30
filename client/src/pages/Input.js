@@ -13,10 +13,9 @@ const Input = (props) => {
     if (props.code) {
       codeRef.current.value = props.code;
     }
-  }, []);
+  }, [props.code]);
 
   const clickHandler = () => {
-    
     const res = codeRef.current.value;
     props.setcode(res);
     // setLoad(true);
@@ -26,7 +25,7 @@ const Input = (props) => {
         language: lang,
       })
       .then((response) => {
-        console.log(response.data.output);
+        // console.log(response.data.output);
         props.setiscodefill(true);
         props.setoutput(response.data.output);
         history.push("/output");
@@ -44,14 +43,14 @@ const Input = (props) => {
       {" "}
       <div className="inputc">
         <div className="options">
-          <Link to="/" >
+          <Link to="/">
             {" "}
             <AiFillCaretLeft />
           </Link>
           <h4 style={{ fontWeight: "600", fontSize: "21px" }}>Input code </h4>
           <select
             onChange={changeHandler}
-            className="w-20 mt-2 text-black rounded-full"
+            className="w-20 mt-2 text-black rounded-full outline-none"
           >
             <option value="c">C</option>
             <option value="cpp">C++</option>
@@ -60,7 +59,7 @@ const Input = (props) => {
           </select>
         </div>
 
-        <textarea className="texta" ref={codeRef}>
+        <textarea className="texta rounded-xl p-4" ref={codeRef}>
           {" "}
         </textarea>
       </div>

@@ -1,8 +1,5 @@
 .btnc {
-
-
-    width: 133px;
-    
+  width: 133px;
 
   /* width: 237px; */
   height: 49px;
@@ -53,9 +50,9 @@
 .option a {
   text-decoration: none;
 }
-.btncontainer{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
+.btncontainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
 }
