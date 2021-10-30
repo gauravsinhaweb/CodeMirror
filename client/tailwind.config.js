@@ -9,6 +9,7 @@ module.exports = {
       tertiary: "#0016D9",
       white: "#ffffff",
       black: "#000000",
+      containercolor:"#6B7280"
     }),
 
     // padding: {

@@ -1,0 +1,50 @@
+.btnc {
+  width: 237px;
+  height: 49px;
+  /* left: 79px; */
+  font-weight: 500;
+  background: #ffffff;
+  border-radius: 51px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.texta {
+  /* height: 27rem; */
+  margin: 4px 22px;
+  align-self: stretch;
+  /* F2937: ; */
+  width: 335px;
+  height: 587px;
+
+  padding: 8px;
+  /* left: 20px; */
+  /* top: 96px; */
+  background: #262626;
+  border-radius: 6px;
+}
+.hc {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inputc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80%;
+  justify-content: space-evenly;
+  width: 100vw;
+}
+.options {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2px 5px;
+}
+.option a {
+  text-decoration: none;
+}
