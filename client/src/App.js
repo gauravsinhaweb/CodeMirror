@@ -6,13 +6,18 @@ import Login from "./pages/Login";
 import OutputCode from "./pages/OutputCode";
 import Profile from "./pages/Profile";
 import TakePhoto from "./pages/TakePhoto";
-import WebcamCapture  from "./pages/Webcam";
+import WebcamCapture from "./pages/Webcam";
 
 function App() {
-  const [iscodefill, setiscodefill] = useState(false);
-  const [output, setoutput] = useState("");
-  const [code, setcode] = useState("");
+  const [isCodeFill, setIsCodeFill] = useState(false);
+  const [output, setOutput] = useState("");
+  const [code, setCode] = useState("");
 
+  console.log("code fill =" + isCodeFill);
+
+  let state = {
+    code: null,
+  };
   return (
     <>
       <div className="bg-primary text-white">
@@ -20,24 +25,23 @@ function App() {
         <Router>
           <Switch>
             <Route path="/" exact>
-              <TakePhoto />
+              <TakePhoto state={state} />
             </Route>
-
             <Route path="/input">
               <Input
-                setcode={setcode}
+                state={state}
+                setCode={setCode}
                 code={code}
-                setiscodefill={setiscodefill}
-                setoutput={setoutput}
+                setIsCodeFill={setIsCodeFill}
+                setOutput={setOutput}
               />
-            </Route>
-<Route path="/camera"exact>
- <WebcamCapture/>
-  </Route>
+            </Route>{" "}
             <Route path="/output" exact>
-              <OutputCode outputcode={output} />
+              <OutputCode state={state} outputCode={output} />
             </Route>
-
+            <Route path="/camera" exact>
+              <WebcamCapture />
+            </Route>
             <Route path="/login" exact>
               <Login />
             </Route>

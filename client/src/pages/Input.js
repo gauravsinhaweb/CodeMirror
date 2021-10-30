@@ -13,12 +13,11 @@ const Input = (props) => {
     if (props.code) {
       codeRef.current.value = props.code;
     }
-  }, []);
+  }, [props.code]);
 
   const clickHandler = () => {
-    
     const res = codeRef.current.value;
-    props.setcode(res);
+    props.setCode(res);
     // setLoad(true);
     axios
       .post("http://localhost:3001/api/output", {
@@ -27,8 +26,8 @@ const Input = (props) => {
       })
       .then((response) => {
         console.log(response.data.output);
-        props.setiscodefill(true);
-        props.setoutput(response.data.output);
+        props.setIsCodeFill(true);
+        props.setOutput(response.data.output);
         history.push("/output");
         // setLoad(false);
         // outputRef.current.value = response.data.output;
@@ -38,20 +37,20 @@ const Input = (props) => {
   const changeHandler = (e) => {
     setLang(e.target.value);
   };
-
+  console.log();
   return (
     <div className="h-screen bg-primary flex flex-col hc">
       {" "}
       <div className="inputc">
         <div className="options">
-          <Link to="/" >
+          <Link to="/">
             {" "}
             <AiFillCaretLeft />
           </Link>
           <h4 style={{ fontWeight: "600", fontSize: "21px" }}>Input code </h4>
           <select
             onChange={changeHandler}
-            className="w-20 mt-2 text-black rounded-full"
+            className="w-20 mt-2 text-black rounded-full font-bold outline-none"
           >
             <option value="c">C</option>
             <option value="cpp">C++</option>
@@ -60,7 +59,7 @@ const Input = (props) => {
           </select>
         </div>
 
-        <textarea className="texta" ref={codeRef}>
+        <textarea className="texta text-xl p-6" ref={codeRef}>
           {" "}
         </textarea>
       </div>
