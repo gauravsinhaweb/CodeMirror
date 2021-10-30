@@ -1,5 +1,10 @@
 .btnc {
-  width: 237px;
+
+
+    width: 133px;
+    
+
+  /* width: 237px; */
   height: 49px;
   /* left: 79px; */
   font-weight: 500;
@@ -47,4 +52,10 @@
 }
 .option a {
   text-decoration: none;
+}
+.btncontainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
 }

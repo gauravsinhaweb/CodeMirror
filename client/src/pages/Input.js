@@ -16,7 +16,7 @@ const Input = (props) => {
   }, []);
 
   const clickHandler = () => {
-    console.log(lang);
+    
     const res = codeRef.current.value;
     props.setcode(res);
     // setLoad(true);

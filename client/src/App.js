@@ -32,7 +32,7 @@ function App() {
             </Route>
 
             <Route path="/output" exact>
-              <OutputCode />
+              <OutputCode outputcode={output} />
             </Route>
 
             <Route path="/login" exact>
