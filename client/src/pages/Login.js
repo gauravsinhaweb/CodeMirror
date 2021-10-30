@@ -2,7 +2,7 @@ import React, { Component } from "react"
 // import "./App.css"
 import firebase from "firebase"
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
-import Main from "./main"
+// import Main from "./main"
 
 firebase.initializeApp({
   apiKey: "AIzaSyCjF1NGOgCvc4YgRvvLH-pSGaJGsCPudIM",
@@ -33,16 +33,10 @@ class Login extends Component {
     return (
       <div className="Login">
         {this.state.isSignedIn ? (
-          // <span>
-          //   <div>Signed In!</div>
-          //   <button onClick={() => firebase.auth().signOut()}>Sign out!</button>
-          //   <h1>Welcome {firebase.auth().currentUser.displayName}</h1>
-          //   <img
-          //     alt="profile picture"
-          //     src={firebase.auth().currentUser.photoURL}
-          //   />
-          // </span>
-          <Main />
+          // Add your main component here
+          <div>
+          </div>
+          // <Main />
         ) : (
           <div>
             <p className="grid place-items-center h-full w-full text-2xl font-bold pt-6">Welcome</p>
