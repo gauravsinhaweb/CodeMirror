@@ -6,23 +6,28 @@ import { BiHistory } from "react-icons/bi";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
-function TakePhoto(state) {
+function TakePhoto(props) {
   const [image, setImage] = useState({ preview: "", raw: "" });
 
   const history = useHistory();
+
   if (image.raw.length !== 0) {
+    console.log(image.raw);
     const formData = new FormData();
     formData.append("Image", image.raw);
-    const res = axios.post("http://localhost:3001/api/", formData);
-    if (res.data) {
-      console.log(res.data);
-      state.state.code = res.data.code;
-      history.push("/compiler");
-    } else {
-      console.log(res.error);
-      // need an error here
-    }
-    history.push("/input");
+    axios.post("http://localhost:3001/api/", formData).then((res) => {
+      
+      props.setcode(res.data.code)
+      history.push("/input");
+    });
+    // if (res.data) {
+
+    //   history.push("/compiler");
+    // } else {
+    //   console.log(res.error);
+    //   // need an error here
+    // }
+    
   } else {
     history.push("/");
   }
@@ -30,7 +35,7 @@ function TakePhoto(state) {
   // const clickHandler = async () => {};
 
   const handleChange = (e) => {
-    if (e.target.files.length) {
+    if (e.target.files.length > 0) {
       setImage({
         preview: URL.createObjectURL(e.target.files[0]),
         raw: e.target.files[0],

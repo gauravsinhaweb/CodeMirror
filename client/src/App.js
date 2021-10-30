@@ -21,7 +21,7 @@ function App() {
         <Router>
           <Switch>
             <Route path="/" exact>
-              <TakePhoto />
+              <TakePhoto setcode={setcode} />
             </Route>
 
             <Route path="/input">
