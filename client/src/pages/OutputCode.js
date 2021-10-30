@@ -5,8 +5,8 @@ import "./Input.css";
 function OutputCode(props) {
   const output = useRef();
   useEffect(() => {
-    if (props.outputcode) {
-      output.current.value = props.outputcode;
+    if (props.outputCode) {
+      output.current.value = props.outputCode;
     }
   });
 
@@ -21,7 +21,7 @@ function OutputCode(props) {
     element.click();
   };
 
-  const copyhandler = (e) => {
+  const copyHandler = (e) => {
     output.current.select();
     document.execCommand("copy");
     e.target.focus();
@@ -49,7 +49,7 @@ function OutputCode(props) {
           {/* {"< / > Convert"} */}
           Save
         </button>
-        <button className="btnc" onClick={copyhandler}>
+        <button className="btnc" onClick={copyHandler}>
           Copy
         </button>
       </div>
