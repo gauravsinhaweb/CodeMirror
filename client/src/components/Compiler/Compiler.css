@@ -1,0 +1,77 @@
+.container {
+  background: #08d9d6;
+  width: 90%;
+  height: 63%;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  display: flex;
+}
+
+.code {
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+  height: 90%;
+  width: 55%;
+  color: black;
+  background: transparent;
+}
+.output {
+  margin: 30px;
+  border-radius: 10px;
+
+  color: black;
+  padding: 4px;
+  position: relative;
+  top: 34px;
+  height: 80%;
+  width: 45%;
+  background: #eaeaea;
+}
+
+.load{
+    width: 48%;
+    height: 80%;
+    margin: 30px;
+    border-radius: 10px;
+  
+    padding: 4px;
+    position: relative;
+    top: 34px;
+    height: 80%;
+    width: 45%;
+}
+
+.cmplbtn {
+  width: 146px;
+  height: 45.33px;
+  margin: 10px;
+
+  background: #ff2e63;
+  border-radius: 30px;
+}
+.load{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .code {
+    width: 90%;
+    margin: 10px 30px;
+    margin-top: 20px;
+  }
+  .output {
+    margin: 10px auto;
+    margin-bottom: 20px;
+    width: 90%;
+    top: -10px;
+  }
+}
+
