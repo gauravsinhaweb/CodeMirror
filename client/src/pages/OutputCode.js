@@ -1,10 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, {useState, useEffect, useRef } from "react";
 import "./Input.css";
 import { AiFillCaretLeft } from "react-icons/ai";
 import { Link } from "react-router-dom";
 function OutputCode(props) {
   const output = useRef();
-
   useEffect(() => {
     if (props.outputcode) {
       output.current.value = props.outputcode;

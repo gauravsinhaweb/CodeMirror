@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import OutputCode from "./pages/OutputCode";
 import Profile from "./pages/Profile";
 import TakePhoto from "./pages/TakePhoto";
+import WebcamCapture  from "./pages/Webcam";
 
 function App() {
   const [iscodefill, setiscodefill] = useState(false);
@@ -30,7 +31,9 @@ function App() {
                 setoutput={setoutput}
               />
             </Route>
-
+<Route path="/camera"exact>
+ <WebcamCapture/>
+  </Route>
             <Route path="/output" exact>
               <OutputCode outputcode={output} />
             </Route>
