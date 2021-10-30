@@ -3,7 +3,7 @@ import React, { Component, useState } from "react";
 import Webcam from "react-webcam";
 // const WebcamComponent = () => <Webcam />;
 const videoConstraints = {
-  width: '100%',
+  width: "100%",
   height: 500,
   facingMode: "user",
 };
@@ -18,15 +18,19 @@ const WebcamCapture = () => {
 
   return (
     <div className="webcam-container">
-      {image==''?<Webcam
- audio={false}
- height={400}
- ref={webcamRef}
- screenshotFormat="image/jpeg"
-  width={500}
- videoConstraints={videoConstraints}
-/>:<img src={image}/>}
-      
+      {image == "" ? (
+        <Webcam
+          audio={false}
+          height={400}
+          ref={webcamRef}
+          screenshotFormat="image/jpeg"
+          width={500}
+          videoConstraints={videoConstraints}
+        />
+      ) : (
+        <img src={image} />
+      )}
+
       <button
         onClick={(e) => {
           e.preventDefault();
