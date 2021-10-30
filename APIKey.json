@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "glass-memento-327807",
+  "private_key_id": "52ce3626251f5553e6d63f4f9244d07f409abdcb",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDgKkN/ysmNl3OO\nIkc6miTVI2cG6SaT3BlcLfL/e8UwlWDAzAF757qG+hyxfl5AxYY4hrHzERBNcabY\nkGj3ww6IVAuGM4ud3apYpZWL9gVfmDP7MSD22fav6ufieZecMLNEuhPE4twBpC8M\nzADGscVnlXZsJQ/6ga+2nZHpzekZx1sug3ZkYRIqZZuy4TzRWYu/0g9D/nCjD0CR\n1+L1jXeEUa/3P8pGjqwphJVPpxpdU18g4M3CqlNm6lCXx48wGhwPO2Y7/PxLEfMn\nZF1DsxH9Qbm3QvLMxhiJIuEuqjLIYAXOcFmC2NscjXQwcewiqcDxqk+tNlzlRe3N\ni5ylxVjDAgMBAAECggEALPcNVyL8TxSkL0yc8RpebQqO7gnynRI3XBAzgB/5rAcq\nw0Gowov3FIAzJT9t9JwqkkgihdlUZdR4XVSKWbicv6fsL91DEkWWl/WPC+YrqcNE\nGgz+ycVrAFqkbP9q8/+o1g5lTMcczo96iJybQ0ABkweeG49LpzpAXuc4j6eoLG06\nuAFlh+zc9MXRQSl+ZWG2hFjhhDINcdUgIhm+petn71Wtt1jCzyNVty/iVTXAaSmy\nyFCNJ63FnpxitmjcdD+Z0SY2XE1hwBC7vNErrvC4Xf/T6mJqL3HAu2FjNwO0kfUo\nzbXsG0AHVLQhMJcL20h4qPw2O4FEwqdNs2IFBo0DUQKBgQDwR10/WCiIGV+vAPna\nQZgJnzi4KJWUOn0Karp2+yMjcc0TkaP7HUveQW2CSWuQXaSH4xAHsoRt7+bPUVtj\nSyV6y/cBtI6s3cGRwzp7aj6RkhyCSaq4MIP1m9AJsmWTbCYBtofg/qrVQOLPjDfT\nRrNecE47Btsa+Ex9dhnvwohz3wKBgQDu1P9kyPOL8WwBM3d1lvWBOvpcRB4qz7sv\nRjJ6R0HTfkDmdFw+jVo74iOV8YzKUl2jDUzerFjkU/YK3C7QEv14PJtLIBvlnkLe\nnYPhJW7oHvX5p1jP0ePNiF6/fHHjIo0TWABFZQ7ug7IBmDAKP2NmLUttLq5xj0Qh\n92faSfrXnQKBgQCF//aj7gFkrWnsSkoNC0nEC/Tw10lcCiZT2eO1mScmjD/HaxCd\naeA2yhxNba68K00nr1zwPgGW4hTBh+jEflMfoYJWhCCRjXZ3WP5Td5P/URHvIzA/\nWmctYUDrN39ocQbdK7Opqb0SAwa6osM7Y5GC2HT4fEFTUCgwS935FW9N1wKBgQC5\noFEUC1/HwA+a616IxZjxJV7bgZIU4jnxZ1TqVyHheHqG45+ieojMjFnuO7yar+PZ\nTAgX9cptRJiyHipATNI2tpxYio9EK3p7vd93iXmm7hFuRdQwSkkNQVWq7NUznXIa\nu8YSKZauaStcM+X6wQPHsaKzLJom5xwkbj+ImQFevQKBgHWdDGQriovcCKNvnZbG\nC+wwBID4icfPZcj1HG+51YEtHQLVsCQJdoSg0my6qkZZeOWy85rkBnPk3yUdhV/j\nFmw4j/UXUEz4/8SgQdbk1O4M8HkMsHVfydTrGKFuIN5LzLz4ouBIy2M2HIo7RDfL\nQ7cjCh/iR8wXCUL0UQ0wxMcO\n-----END PRIVATE KEY-----\n",
+  "client_email": "shp-service-account@glass-memento-327807.iam.gserviceaccount.com",
+  "client_id": "109901124952619510410",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/shp-service-account%40glass-memento-327807.iam.gserviceaccount.com"
+}
