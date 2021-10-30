@@ -4,13 +4,18 @@ import TakePhoto from "./pages/TakePhoto";
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route path="/" exact>
-          <TakePhoto />
-        </Route>
-      </Switch>
-    </Router>
+    <>
+      <div className="bg-primary text-white">
+        {" "}
+        <Router>
+          <Switch>
+            <Route path="/" exact>
+              <TakePhoto />
+            </Route>
+          </Switch>
+        </Router>
+      </div>
+    </>
   );
 }
 
