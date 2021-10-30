@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 // import "./cameraStyles.css";
 import Webcam from "react-webcam";
 // const WebcamComponent = () => <Webcam />;
@@ -18,7 +18,7 @@ const WebcamCapture = () => {
 
   return (
     <div className="webcam-container">
-      {image == "" ? (
+      {image === "" ? (
         <Webcam
           audio={false}
           height={400}
@@ -28,7 +28,7 @@ const WebcamCapture = () => {
           videoConstraints={videoConstraints}
         />
       ) : (
-        <img src={image} />
+        <img src={image} alt="alt" />
       )}
 
       <button

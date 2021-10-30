@@ -13,10 +13,9 @@ const Input = (props) => {
     if (props.code) {
       codeRef.current.value = props.code;
     }
-  }, []);
+  }, [props.code]);
 
   const clickHandler = () => {
-    
     const res = codeRef.current.value;
     props.setcode(res);
     // setLoad(true);
@@ -44,7 +43,7 @@ const Input = (props) => {
       {" "}
       <div className="inputc">
         <div className="options">
-          <Link to="/" >
+          <Link to="/">
             {" "}
             <AiFillCaretLeft />
           </Link>
