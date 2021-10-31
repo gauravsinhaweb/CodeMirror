@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
+import useAuth from "./hook/useAuth";
 import History from "./pages/History";
 import Input from "./pages/Input";
 import Login from "./pages/Login";
@@ -7,56 +13,59 @@ import OutputCode from "./pages/OutputCode";
 import Profile from "./pages/Profile";
 import TakePhoto from "./pages/TakePhoto";
 import WebcamCapture from "./pages/Webcam";
-import useAuth from "./hook/useAuth";
 
 function App() {
+  const [loginwWithGoogle, LogOut, user, boards, userID] = useAuth();
+
   const [iscodefill, setiscodefill] = useState(false);
   const [output, setoutput] = useState("");
   const [code, setcode] = useState("");
-  const [signInWithGoogle, LogOut, user, userID, codeoutput] = useAuth();
+  const [load, setload] = useState(false);
 
-  console.log(iscodefill);
+  console.log(iscodefill, user);
   return (
     <>
       <div className="bg-primary text-white">
         {" "}
         <Router>
           <Switch>
+            {/* <Route exact path="/history">
+              {user && user.displayName ? (
+                <Redirect to="/history" />
+              ) : (
+                <Login />
+              )}
+            </Route> */}
             <Route path="/" exact>
-              <TakePhoto setcode={setcode} userID={userID} />
+              <TakePhoto load={load} setcode={setcode} setload={setload} />
             </Route>
 
             <Route path="/input">
               <Input
                 setcode={setcode}
                 code={code}
+                load={load}
+                setload={setload}
                 setiscodefill={setiscodefill}
                 setoutput={setoutput}
+                userID={userID}
               />
             </Route>
             <Route path="/camera" exact>
               <WebcamCapture />
             </Route>
             <Route path="/output" exact>
-              <OutputCode
-                outputcode={output}
-                userID={userID}
-                codeoutput={codeoutput}
-              />
+              <OutputCode outputcode={output} />
             </Route>
 
             <Route path="/login" exact>
-              <Login />
+              <Login loginwWithGoogle={loginwWithGoogle} />
             </Route>
             <Route path="/history" exact>
-              <History />
+              <History userID={userID} boards={boards} />
             </Route>
             <Route path="/profile" exact>
-              <Profile
-                signInWithGoogle={signInWithGoogle}
-                LogOut={LogOut}
-                user={user}
-              />
+              <Profile LogOut={LogOut} user={user} />
             </Route>
           </Switch>
         </Router>

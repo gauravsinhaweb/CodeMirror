@@ -4,12 +4,13 @@ import "firebase/auth";
 // const APIKEY = process.env.API_KEY;
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCjF1NGOgCvc4YgRvvLH-pSGaJGsCPudIM",
-  authDomain: "codemirror-fe6c6.firebaseapp.com",
-  projectId: "codemirror-fe6c6",
-  storageBucket: "codemirror-fe6c6.appspot.com",
-  messagingSenderId: "107284799580",
-  appId: "1:107284799580:web:c11a0773338933e276c699",
+  apiKey: "AIzaSyCgYOKOuH8AlRGxexWq2oCv4vBpHfZL01k",
+  authDomain: "auth-development-1888f.firebaseapp.com",
+  databaseURL: "https://auth-development-1888f-default-rtdb.firebaseio.com",
+  projectId: "auth-development-1888f",
+  storageBucket: "auth-development-1888f.appspot.com",
+  messagingSenderId: "834361534333",
+  appId: "1:834361534333:web:61c1638c95e7322a898e14",
 };
 
 // Initialize Firebase

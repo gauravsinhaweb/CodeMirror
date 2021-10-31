@@ -1,0 +1,51 @@
+.outer {
+  height: 100vh;
+  width: 100vw;
+  /* background-color: ; */
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+}
+.madewith {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.outerf {
+  height: 206px;
+  display: flex;
+  align-items: center;
+}
+
+.outerbtns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 237px;
+  margin: 34px;
+  height: 300px;
+}
+
+.footter {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.outerbtns button {
+  width: 90%;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 7px 2px;
+}

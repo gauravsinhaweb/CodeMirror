@@ -4,7 +4,8 @@ function useAuth() {
   // const [error, setError] = useState(null);
   // const [currentUser, setCurrentUser] = useState();
   const [user, setUser] = useState(null);
-  const [codeoutput, setCodeoutput] = useState();
+  const [boards, setBoards] = useState();
+
   function signInWithGoogle() {
     return auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
@@ -32,7 +33,6 @@ function useAuth() {
   }, [user]);
 
   let userID = user && user.uid;
-
   useEffect(() => {
     return db
       .collection(`users`)
@@ -42,7 +42,7 @@ function useAuth() {
         try {
           if (doc) {
             return db
-              .collection(`users/${doc.id}/CodeOutput`)
+              .collection(`users/${doc.id}/codeinput`)
               .orderBy("timestamp", "desc")
               .onSnapshot((snap) => {
                 const documents = [];
@@ -52,7 +52,7 @@ function useAuth() {
                     ...doc.data(),
                   })
                 );
-                setCodeoutput(documents);
+                setBoards(documents);
               });
           } else return;
         } catch (e) {
@@ -61,7 +61,7 @@ function useAuth() {
       });
   }, [userID]);
 
-  return [signInWithGoogle, LogOut, user, userID, codeoutput];
+  return [signInWithGoogle, LogOut, user, boards, userID];
 }
 
 export default useAuth;

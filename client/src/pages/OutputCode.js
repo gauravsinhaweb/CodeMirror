@@ -26,7 +26,6 @@ function OutputCode(props, codeoutput) {
     document.execCommand("copy");
     e.target.focus();
   };
-  console.log(codeoutput);
   return (
     <div className="h-screen bg-primary flex flex-col hc">
       {" "}
@@ -51,7 +50,7 @@ function OutputCode(props, codeoutput) {
         <button className="btnc" onClick={downloadTxtFile}>
           {/* {`${load ? "Loading." : "< / > Convert"} `} */}
           {/* {"< / > Convert"} */}
-          Save
+          Download
         </button>
         <button className="btnc" onClick={copyhandler}>
           Copy

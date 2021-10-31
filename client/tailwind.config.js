@@ -9,7 +9,7 @@ module.exports = {
       tertiary: "#0016D9",
       white: "#ffffff",
       black: "#000000",
-      containercolor:"#6B7280"
+      containercolor: "#6B7280",
     }),
 
     // padding: {
@@ -28,6 +28,7 @@ module.exports = {
       tertiary: "#0016D9",
       white: "#ffffff",
       black: "#000000",
+      blue: "#C7D2FE",
     },
     fontFamily: {
       serif: ["poppins"],

@@ -1,28 +1,32 @@
 const axios = require("axios");
 const express = require("express");
 const vision = require("@google-cloud/vision");
-const multer = require('multer');
+const multer = require("multer");
 const router = express.Router();
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, './uploads/');
+    cb(null, "./uploads/");
   },
   filename: function (req, file, cb) {
     cb(null, file.originalname);
-  }
-})
+  },
+});
 
 const fileFilter = (req, file, cb) => {
-  if (file.mimetype === 'image/png' || file.mimetype === 'image/jpeg' || file.mimetype === 'image/jpg') cb(null, true);
+  if (
+    file.mimetype === "image/png" ||
+    file.mimetype === "image/jpeg" ||
+    file.mimetype === "image/jpg"
+  )
+    cb(null, true);
   else cb(null, false);
-}
+};
 
 const upload = multer({ storage });
 
-router.post("/", upload.single('Image'), async (req, res) => {
+router.post("/", upload.single("Image"), async (req, res) => {
   const file = req.file;
-  console.log('file');
   try {
     const client = new vision.ImageAnnotatorClient({
       keyFilename: "./APIKey.json",
@@ -38,7 +42,6 @@ router.post("/", upload.single('Image'), async (req, res) => {
 
 router.post("/output", async (req, res, next) => {
   const { code, language } = req.body;
-  console.log(String(code));
   //We can input language and code from frontend
   const x = await axios.post("https://api.jdoodle.com/v1/execute", {
     clientId: "ab42481cb8b420578f54ce9c4f7e87ab",
