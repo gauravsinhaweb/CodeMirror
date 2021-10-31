@@ -8,21 +8,12 @@ import axios from "axios";
 const Input = (props) => {
   const history = useHistory();
   const [lang, setLang] = useState("c");
-  const codeRef = useRef();
-
-  useEffect(() => {
-    if (props.code) {
-      codeRef.current.value = props.code;
-    }
-  }, [props.code]);
-
+  
   const clickHandler = () => {
-    const res = codeRef.current.value;
     props.setload(true);
-    props.setcode(res);
     axios
       .post("http://localhost:3001/api/output", {
-        code: res,
+        code: props.code,
         language: lang,
       })
       .then((response) => {
@@ -33,7 +24,6 @@ const Input = (props) => {
         history.push("/output");
       });
   };
-
   const changeHandler = (e) => {
     setLang(e.target.value);
   };
@@ -64,14 +54,19 @@ const Input = (props) => {
               </select>
             </div>
 
-            <textarea className="texta rounded-xl p-4" ref={codeRef}>
+            <textarea
+              onChange={(e) => {
+                props.setcode(e.target.value);
+              }}
+              value={props.code}
+              className="texta rounded-xl p-4"
+              //   ref={codeRef}
+            >
               {" "}
             </textarea>
           </div>
           <div onClick={clickHandler} className={`py-4`}>
             <button className="btnc">
-              {/* {`${load ? "Loading." : "< / > Convert"} `} */}
-              {/* {"< / > Convert"} */}
               Convert
             </button>
           </div>

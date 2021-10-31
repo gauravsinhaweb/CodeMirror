@@ -32,7 +32,7 @@ function App() {
                   setload={setload}
                   setiscodefill={setiscodefill}
                   setoutput={setoutput}
-                  setcode={setload}
+                  setcode={setcode}
                 />
               </Route>
               <Route path="/camera" exact>
