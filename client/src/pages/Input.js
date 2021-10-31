@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import Loader from "./Loader";
 import { useHistory } from "react-router";
 import "./Input.css";
 import { Link } from "react-router-dom";
@@ -17,8 +18,8 @@ const Input = (props) => {
 
   const clickHandler = () => {
     const res = codeRef.current.value;
+    props.setload(true);
     props.setcode(res);
-    // setLoad(true);
     axios
       .post("http://localhost:3001/api/output", {
         code: res,
@@ -28,9 +29,8 @@ const Input = (props) => {
         // console.log(response.data.output);
         props.setiscodefill(true);
         props.setoutput(response.data.output);
+        props.setload(false);
         history.push("/output");
-        // setLoad(false);
-        // outputRef.current.value = response.data.output;
       });
   };
 
@@ -39,38 +39,45 @@ const Input = (props) => {
   };
 
   return (
-    <div className="h-screen bg-primary flex flex-col hc">
-      {" "}
-      <div className="inputc">
-        <div className="options">
-          <Link to="/">
-            {" "}
-            <AiFillCaretLeft />
-          </Link>
-          <h4 style={{ fontWeight: "600", fontSize: "21px" }}>Input code </h4>
-          <select
-            onChange={changeHandler}
-            className="w-20 mt-2 text-black rounded-full outline-none"
-          >
-            <option value="c">C</option>
-            <option value="cpp">C++</option>
-            <option value="python3">Python</option>
-            <option value="java">Java</option>
-          </select>
-        </div>
-
-        <textarea className="texta rounded-xl p-4" ref={codeRef}>
+    <>
+      {props.load && <Loader />}
+      {!props.load && (
+        <div className="h-screen bg-primary flex flex-col hc">
           {" "}
-        </textarea>
-      </div>
-      <div onClick={clickHandler} className={`py-4`}>
-        <button className="btnc">
-          {/* {`${load ? "Loading." : "< / > Convert"} `} */}
-          {/* {"< / > Convert"} */}
-          Convert
-        </button>
-      </div>
-    </div>
+          <div className="inputc">
+            <div className="options">
+              <Link to="/">
+                {" "}
+                <AiFillCaretLeft />
+              </Link>
+              <h4 style={{ fontWeight: "600", fontSize: "21px" }}>
+                Input code{" "}
+              </h4>
+              <select
+                onChange={changeHandler}
+                className="w-20 mt-2 text-black rounded-full outline-none"
+              >
+                <option value="c">C</option>
+                <option value="cpp">C++</option>
+                <option value="python3">Python</option>
+                <option value="java">Java</option>
+              </select>
+            </div>
+
+            <textarea className="texta rounded-xl p-4" ref={codeRef}>
+              {" "}
+            </textarea>
+          </div>
+          <div onClick={clickHandler} className={`py-4`}>
+            <button className="btnc">
+              {/* {`${load ? "Loading." : "< / > Convert"} `} */}
+              {/* {"< / > Convert"} */}
+              Convert
+            </button>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

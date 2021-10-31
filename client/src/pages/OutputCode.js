@@ -51,7 +51,7 @@ function OutputCode(props) {
         <button className="btnc" onClick={downloadTxtFile}>
           {/* {`${load ? "Loading." : "< / > Convert"} `} */}
           {/* {"< / > Convert"} */}
-          Save
+          Download
         </button>
         <button className="btnc" onClick={copyhandler}>
           Copy
