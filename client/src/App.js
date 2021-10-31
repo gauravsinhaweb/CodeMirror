@@ -7,11 +7,13 @@ import OutputCode from "./pages/OutputCode";
 import Profile from "./pages/Profile";
 import TakePhoto from "./pages/TakePhoto";
 import WebcamCapture from "./pages/Webcam";
+import useAuth from "./hook/useAuth";
 
 function App() {
   const [iscodefill, setiscodefill] = useState(false);
   const [output, setoutput] = useState("");
   const [code, setcode] = useState("");
+  const [signInWithGoogle, LogOut, user, userID, codeoutput] = useAuth();
 
   console.log(iscodefill);
   return (
@@ -21,7 +23,7 @@ function App() {
         <Router>
           <Switch>
             <Route path="/" exact>
-              <TakePhoto setcode={setcode} />
+              <TakePhoto setcode={setcode} userID={userID} />
             </Route>
 
             <Route path="/input">
@@ -36,7 +38,11 @@ function App() {
               <WebcamCapture />
             </Route>
             <Route path="/output" exact>
-              <OutputCode outputcode={output} />
+              <OutputCode
+                outputcode={output}
+                userID={userID}
+                codeoutput={codeoutput}
+              />
             </Route>
 
             <Route path="/login" exact>
@@ -46,7 +52,11 @@ function App() {
               <History />
             </Route>
             <Route path="/profile" exact>
-              <Profile />
+              <Profile
+                signInWithGoogle={signInWithGoogle}
+                LogOut={LogOut}
+                user={user}
+              />
             </Route>
           </Switch>
         </Router>

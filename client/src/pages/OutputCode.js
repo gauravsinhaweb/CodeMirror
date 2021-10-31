@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { AiFillCaretLeft } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import "./Input.css";
-function OutputCode(props) {
+function OutputCode(props, codeoutput) {
   const output = useRef();
   useEffect(() => {
     if (props.outputcode) {
@@ -26,7 +26,7 @@ function OutputCode(props) {
     document.execCommand("copy");
     e.target.focus();
   };
-
+  console.log(codeoutput);
   return (
     <div className="h-screen bg-primary flex flex-col hc">
       {" "}

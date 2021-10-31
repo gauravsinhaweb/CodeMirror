@@ -3,10 +3,15 @@ import { useHistory } from "react-router";
 import "./Input.css";
 import { Link } from "react-router-dom";
 import { AiFillCaretLeft } from "react-icons/ai";
+import { db } from "../components/firebase";
+import firebase from "firebase";
+
 import axios from "axios";
-const Input = (props) => {
+const Input = (props, userID) => {
   const history = useHistory();
   const [lang, setLang] = useState("c");
+  const [inputValue, setInputValue] = useState("");
+
   const codeRef = useRef();
 
   useEffect(() => {
@@ -15,7 +20,9 @@ const Input = (props) => {
     }
   }, [props.code]);
 
-  const clickHandler = () => {
+  const clickHandler = (e) => {
+    e.preventDefault();
+
     const res = codeRef.current.value;
     props.setcode(res);
     // setLoad(true);
@@ -32,6 +39,12 @@ const Input = (props) => {
         // setLoad(false);
         // outputRef.current.value = response.data.output;
       });
+
+    db.collection(`users/${userID}/CodeOutput`).add({
+      name: inputValue,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    });
+    setInputValue("");
   };
 
   const changeHandler = (e) => {
@@ -59,7 +72,11 @@ const Input = (props) => {
           </select>
         </div>
 
-        <textarea className="texta rounded-xl p-4" ref={codeRef}>
+        <textarea
+          className="texta rounded-xl p-4"
+          ref={codeRef}
+          onChange={(e) => setInputValue(e.target.value)}
+        >
           {" "}
         </textarea>
       </div>
