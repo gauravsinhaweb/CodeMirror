@@ -22,7 +22,7 @@ function App() {
   const [code, setcode] = useState("");
   const [load, setload] = useState(false);
 
-  console.log(iscodefill, user);
+  console.log(iscodefill);
   return (
     <>
       <div className="bg-primary text-white">
@@ -65,7 +65,7 @@ function App() {
               <History userID={userID} boards={boards} />
             </Route>
             <Route path="/profile" exact>
-              <Profile LogOut={LogOut} user={user} />
+              <Profile LogOut={LogOut} user={user} boards={boards} />
             </Route>
           </Switch>
         </Router>
